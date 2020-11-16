@@ -25,7 +25,7 @@ SECRET_KEY = '12h)p_e6mzlkx(=l)re@*41+x%3g9sba*(qo5$w8zuwuq&yp1v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['creditcard-status.herokuapp.com']
 
 
 # Application definition
