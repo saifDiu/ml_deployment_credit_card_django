@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style media="screen">
+    body {
+      font-family: "Yanone Kaffeesatz";
+      font-size: 15px;
+      }
+    input[type=text], select {
+        width: 20%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+      }
+      input[type=submit] {
+        width: 20%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <hr>
+    <h4 align="center">Check your account status here </h4>
+    <hr>
+    <form align="center" class="" action="#" method="POST">
+      {% csrf_token %}
+      <input type="text" name="LIMIT_BAL"  placeholder="Limit Balance" required>
+      <input type="text" name="EDUCATION"  placeholder="Education Status" required>
+      <input type="text" name="MARRIAGE"  placeholder="Marriage Status" required><br>
+      <input type="text" name="AGE"  placeholder="Your Age" required>
+      <input type="text" name="PAY_1"  placeholder="Payment Status" required>
+      <input type="text" name="BILL_AMT1"  placeholder="Bill Amount 1" required> <br>
+      <input type="text" name="BILL_AMT2"  placeholder="Bill Amount 2" required>
+      <input type="text" name="BILL_AMT3"  placeholder="Bill Amount 3" required>
+      <input type="text" name="BILL_AMT4"   placeholder="Bill Amount 4" required><br>
+      <input type="text" name="BILL_AMT5"   placeholder="Bill Amount 5" required>
+      <input type="text" name="BILL_AMT6"  placeholder="Bill Amount 6" required>
+      <input type="text" name="PAY_AMT1" placeholder="Pay Amount 1" required><br>
+      <input type="text" name="PAY_AMT2"  placeholder="Pay Amount 2" required>
+      <input type="text" name="PAY_AMT3" placeholder="Pay Amount 3" required>
+      <input type="text" name="PAY_AMT4"  placeholder="Pay Amount 4" required><br>
+      <input type="text" name="PAY_AMT5" placeholder="Pay Amount 5" required>
+      <input type="text" name="PAY_AMT6" placeholder="Pay Amount 6" required><br>
+      <input type="submit" name="" value="Check Status">
+    </form>
+    {% if ans == 1 %}
+      <h3 align="center" class = "alert alert-info">Default payment next month: True (1)</h3>
+    {% else %}
+      <h3 align="center" class = "alert alert-danger">Default payment next month: False (0)</h3>
+    {% endif%}
+
+  </body>
+</html>
