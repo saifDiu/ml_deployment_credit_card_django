@@ -28,9 +28,9 @@ def home(request):
         account_details_list.append(request.POST.get('PAY_AMT6'))
         #print(account_details_list)
         #check_status(account_details_list)
+        ans = model.predict([account_details_list])
+        context = {'ans':ans}
+        return render(request, 'deployml/home.html', context)
         
-
-           
-    ans = model.predict([[account_details_list]])
-    context = {'ans':ans}
-    return render(request, 'deployml/home.html', context)
+    
+    return render(request, 'deployml/home.html')
