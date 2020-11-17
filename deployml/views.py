@@ -29,9 +29,8 @@ def home(request):
         #print(account_details_list)
         #check_status(account_details_list)
         
-        def check_status():
-            ans = model.predict([account_details_list])
-            return ans
-    
-    context = {'ans':check_status()}
+
+           
+    ans = model.predict([account_details_list])
+    context = {'ans':ans}
     return render(request, 'deployml/home.html', context)
