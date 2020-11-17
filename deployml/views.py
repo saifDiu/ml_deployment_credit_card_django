@@ -6,10 +6,10 @@ import pickle
 def home(request):
 
     model = pickle.load(open('model_pickle', 'rb'))
-
+    account_details_list = []
 
     if request.method == "POST":
-        account_details_list = []
+        
         account_details_list.append(request.POST.get('LIMIT_BAL'))
         account_details_list.append(request.POST.get('EDUCATION'))
         account_details_list.append(request.POST.get('MARRIAGE'))
@@ -27,9 +27,9 @@ def home(request):
         account_details_list.append(request.POST.get('PAY_AMT4'))
         account_details_list.append(request.POST.get('PAY_AMT5'))
         account_details_list.append(request.POST.get('PAY_AMT6'))
-
         #print(account_details_list)
-
         ans = model.predict([account_details_list])
+        
+        
     context = {'ans':ans}
     return render(request, 'deployml/home.html', context)
