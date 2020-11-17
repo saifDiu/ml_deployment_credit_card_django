@@ -5,7 +5,7 @@ import pickle
 
 def home(request):
 
-    #model = pickle.load(open('model_pickle', 'rb'))
+    model = pickle.load(open('model_pickle', 'rb'))
 
 
 
@@ -30,6 +30,6 @@ def home(request):
 
     #print(account_details_list)
 
-    #ans = model.predict([account_details_list])
-    #context = {'ans':ans}
+    ans = model.predict([account_details_list])
+    context = {'ans':ans}
     return render(request, 'deployml/home.html')
