@@ -31,6 +31,6 @@ def home(request):
         
 
            
-    ans = model.predict([account_details_list])
+    ans = model.predict([[account_details_list]])
     context = {'ans':ans}
     return render(request, 'deployml/home.html', context)
